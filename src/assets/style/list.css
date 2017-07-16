@@ -1,0 +1,194 @@
+/* 清除浮动 */
+.clearfix:after {
+  display: table;
+  content: '';
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+
+/* 列表容器 */
+.list-wrap {
+  display: inline-block;
+  width: 270px;
+  /* height: 100%; */
+  margin: 0 5px;
+  /* box-sizing: border-box; */
+  vertical-align: top;
+  /* white-space: nowrap; */
+  overflow-y: auto;
+  height:530px;
+}
+/* 单个列表 */
+.list-item {
+  position: relative;
+  width: 270px;
+  height: auto;
+  background-color: rgba(226, 228, 230, 1.0);
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.list-item .list-header {
+  width: 270px;
+  height: auto;
+  min-height: 32px;
+}
+
+.list-item .list-header h2{
+  display: inline-block;
+  width: 228px;
+  min-height: 40px;
+  max-height: 16pc;
+  overflow: hidden;
+  word-wrap: break-word;
+  margin: 0px;
+  padding: 10px 6px 6px 8px;
+}
+.list-item .list-header h2.active {
+  display: none;
+}
+
+.list-item .list-header .list-header-input {
+  display: none;
+  width: 216px;
+  height: 35px;
+  min-height: 35px;
+  line-height: 10px;
+  max-height: 260px;
+  margin: 2px 2px 2px 6px;
+  padding: 6px 2px;
+  word-wrap: break-word;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.list-item .list-header .list-header-input::selection{
+  background-color: skyblue;
+  font-size: 16px;
+}
+
+.list-item .list-header .is-editing {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bold;
+  overflow-y: visible;
+  resize: none;
+}
+
+.list-item .list-header .list-dynamic {
+  float: right;
+  margin: 4.5px 4px;
+  transform: scale(.8);
+}
+
+/* 单个卡片 */
+.card-item {
+  margin: 0 6px 10px 6px;
+  padding: 6px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px #ccc;
+  background-color: #fff;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+.card-item:hover {
+  background-color: rgba(233, 236, 235, 1.0);
+}
+.card-cover {
+  width: 100%;
+  height: 150px;
+  background-color: rgba(252, 252, 252, 1.0);
+  background-size: cover;
+  /* background-image: url('http://www.semantic-ui-cn.com/images/avatar/large/stevie.jpg'); */
+  z-index: 20;
+}
+
+.card-item-content {
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.card-item-label {
+  width: 100%;
+  display: inline-block;
+}
+
+
+#card-item-content .card-item-label span,#card-item-label span{
+  float: left;
+  width: 42px;
+  height: 8px;
+  margin: 0 3px 3px 0;
+  padding: 0;
+  border-radius: 5px;
+  line-height: 75pt;
+}
+.card-item .card-item-detail {
+  display: block;
+  width: 100%;
+  margin: 4px 0;
+}
+
+.card-item-badges {
+  width: 100%;
+  height: auto;
+  max-height: 26px;
+  color: rgba(140, 140, 140, 1.0);
+}
+.card-item-badges div {
+  float: left;
+  margin: 0 4px 4px 0;
+}
+
+.card-item .rename-card-item {
+  display: none;
+  float: right;
+}
+.active-card .rename-card-item {
+  display: inline-block;
+  transform-origin: top right;
+  transform: scale(0.7);
+  z-index: 40;
+}
+.new-card .add-card-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 8px 10px;
+  color: rgba(140,140,140,1.0);
+}
+.new-card .add-card-btn:hover {
+  background-color: rgba(192,196,200,1.0);
+  color:rgba(68,68,68,1.0);
+  text-decoration: underline;
+}
+
+.new-card .add-card-btn.active {
+  display: none;
+}
+.card-composer.active {
+  display: none;
+}
+.card-composer .newcard-detail {
+  width: calc(100% - 12px);
+  min-height: 54px;
+  max-height: 162px;
+  margin: 0 6px;
+  overflow:  hidden;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  outline: none;
+  resize: none;
+}
+
+.card-composer .btn-add {
+  margin: 4px 6px 10px;
+}
+
+
+
+
+
+

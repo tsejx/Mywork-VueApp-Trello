@@ -1,0 +1,493 @@
+body{
+  height: 100%;
+}
+html{
+  height: 100%;
+}
+.body{
+  background-color: skyblue;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.top{
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  background-color: rgba(143, 143, 143, 0.7);
+  position: relative;
+}
+.kanban{
+  float: left;
+  margin: 11px
+}
+.search-text{
+  width: 200px;
+  opacity: 0.9;
+  float: left;
+}
+.top h2{
+  float: left;
+  margin: 0;
+  padding: 0;
+  font-family: Algerian;
+  position: absolute;
+  left: calc(50% - 20px);
+  top:calc(50% - 15px)
+}
+/*页面右上角按钮组*/
+.Btns{
+  height: 60px;
+  margin-right: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.Btn{
+  border: 0;
+  background-color: rgba(255, 255, 255, .4)
+}
+/*弹框*/
+.box-show{
+  width: 300px;
+  position: absolute;
+  right: 10px;
+  top: 60px;
+  padding: 8px;
+  color: rgb(24, 24, 24);
+  background-color: #fff;
+  display: none
+}
+.box-show .showList{
+  list-style: none;
+}
+.showList .showTitle{
+  height: 40px;
+  width: 100%;
+  color: rgb(170, 170, 170);
+  line-height: 30px;
+  padding: 6px 10px;
+  border-bottom: 1px solid #ccc
+}
+.showTitle h3{
+  float: left;
+  margin-left:110px
+}
+.showTitle i{
+  float: right;
+  margin-top:6px 
+}
+.showList ul{
+  width: 100%;
+  margin-top: 10px;
+}
+.showList ul li h4{
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  padding-left: 5px;
+}
+.showList ul li:nth-child(3n){
+  margin-bottom: 3px;
+  border-bottom: 1px solid #ccc
+}
+.showList ul li:hover{
+  background-color: rgba(0, 174, 230, 0.7);
+}
+/*看板信息栏*/
+.information{
+  height: 40px;
+  width: 100%;
+}
+.information h3{
+  display: inline-block;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+  margin-top: 4.5px;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 20px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.information h3:hover{
+  background-color: rgba(143, 143, 143, 0.7);
+}
+/*星标记*/
+.information .el-icon-star-off{
+  color: #fff;
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 4px
+}
+.information .el-icon-star-off:hover{
+  background-color:rgba(143, 143, 143, 0.7)
+}
+/*显示菜单*/
+.information span{
+  float: right;
+  display: block;
+  height: 30px;
+  width: 100px;
+  line-height: 30px;
+  margin-top: 5px;
+  margin-right: 10px;
+  border-radius: 4px;
+  padding-left:5px;
+  padding-right: 5px;
+}
+.information span i{
+  color: #fff;
+  font-size: 17px
+}
+.information span a{
+  margin-left: 5px;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: underline;
+}
+.information span:hover{
+  background-color: rgba(143, 143, 143, 0.7)
+}
+/*看板信息 搜索看板及看板标题弹框*/
+.kanban-search{
+  width: 300px;
+  background-color: rgb(227, 227, 227);
+  position: absolute;
+  left: 0;
+  top: 60px;
+  border-radius: 4px;
+  padding: 10px;
+  display: none
+}
+.kanban-search ul{
+  margin: 6px 0 0 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 10px
+}
+.lately,.kanbans{
+  height: 25px;
+  width: 100%;
+  line-height: 25px
+}
+.lately .el-icon-time,.kanbans .el-icon-menu{
+  margin-right: 6px
+}
+.lately .el-icon-plus,.kanbans .el-icon-plus{
+  float: right;
+  padding: 6px;
+  border-radius: 4px
+}
+.lately span,.kanbans span{
+  font-size: 15px
+}
+.el-icon-plus:hover{
+  background-color: rgba(143, 143, 143, 0.7)
+}
+.new-kanban,.to-view{
+  height: 30px;
+  line-height: 20px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: underline;
+  cursor: default;
+}
+.new-kanban:hover,.to-view:hover{
+  background-color: rgba(143, 143, 143, 0.7)
+}
+/*最近查看的看板 和 看板列表 样式*/
+.kanban-list li,.lately-kanban li{
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: rgba(42, 255, 229, 0.3);
+}
+.kanban-list span,.lately-kanban span{
+  float: left;
+  display: inline-block;
+  height: 100%;
+  width: 30px;
+  background-color:rgba(42, 255, 229, 1) 
+}
+.kanban-list p,.lately-kanban p{
+  float: left;
+  margin: 0;
+  padding: 5px 10px;
+}
+.lately-kanban em{
+  float: right;
+  margin-right: 10px;
+  cursor: default;
+}
+.kanban-list i,.lately-kanban i{
+  float: right;
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 4px
+}
+.kanban-list li:hover,.lately-kanban li:hover{
+  background-color: rgba(98, 207, 193, 0.6);
+}
+/*菜单*/
+.menu{
+  float: right;
+  height: 90%;
+  width: 300px;
+  background-color: rgb(227, 227, 227);
+  position: absolute;
+  top: 60px;
+  right: 0;
+  overflow: auto;
+  display: none;
+}
+.menu h2{
+  margin: 0;
+  height: 40px;
+  width: 100%;
+  font-size: 18px;
+  line-height: 40px;
+  color: #999;
+  text-indent: 130px;
+  border-bottom: 1px solid #ccc;
+}
+/*菜单的返回按钮*/
+.toblack{
+  display: -none
+}
+.menu .toblack i{
+  float: left;
+  margin: 13px 0 0 15px;
+  width: 0;
+}
+.close{
+  margin-left: 95px;
+  cursor: default;
+}
+.trello{
+  height: 100px;
+  width: 100%;
+  border-bottom:1px solid #ccc;
+  padding: 10px
+}
+.trello .btn{
+  width: 100%;
+  border: 1px solid rgb(196, 196, 196); 
+  background-color: rgb(196, 196, 196)
+}
+.trello .btn:hover{
+  border: 1px solid rgb(200, 200, 200);
+  background-color: rgb(200, 200, 200)
+  
+}
+#logo{
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  background-image: url(../image/50.png);
+  background-size: 30px 30px;
+  margin-bottom: 6px
+}
+ul,li{
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+.setting{
+  height: 180px;
+  width: 100%;
+  padding:5px 10px;
+  border-bottom: 1px solid #ccc
+}
+.setting li{
+   height: 32px;
+   width: 100%;
+   line-height: 32px;
+   font-size: 15px;
+   font-weight: bold;
+   padding-left: 10px;
+   border-radius: 4px;
+}
+.setting li:hover{
+  background-color: rgba(143, 143, 143, 0.7)
+}
+.setting li i,.sports li i{
+  margin-right: 10px;
+}
+.sports{
+  width: 100%;
+  padding-left: 10px;
+}
+.sports h4{
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  padding-left: 10px
+}
+.sports h4:hover{
+  background-color: rgba(143, 143, 143, 0.7)
+}
+.list{
+  width: 100%;
+  min-height: 40px;
+  padding-left: 10px;
+  margin-top: 6px
+}
+.list li{
+  height: 45px;
+  width: 100%;
+  border-bottom: 1px solid #ccc
+}
+.list li p{
+  margin: 0;
+  font-size: 16px;
+}
+.list li span{
+  font-size:13px
+}
+/*主体部分*/
+.scroll-wrap{
+  position: relative;
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+}
+
+.todo-content{
+  height: 100%;
+  left:0px;
+  top: 0;
+  position: absolute;
+  white-space: nowrap;
+}
+/*添加卡片的样式*/
+.add-card-wrap{
+  display: inline-block;
+  position: relative;
+}
+.add-card-wrap.show-add-card .add-card-edit{
+  height: 80px;
+  opacity: 1;
+  z-index: 99;
+}
+.add-card-wrap.show-add-card .add-card{
+  display: none;
+}
+.add-card-wrap.show-add-card #save-add-title{
+  opacity: 1;
+  color:white;
+}
+.add-card{
+  width: 250px;
+  height: 40px;
+  padding: 7px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-sizing:border-box;
+  outline: none;
+  border: none;
+}
+.add-card::-webkit-input-placeholder{
+  font-size: 16px;
+  color:white
+}
+.add-card-edit {
+  position: absolute;
+  left: 0;
+  top: -14px;
+  z-index: -99;
+  background: rgba(226, 228, 230, 1.0);
+  border-radius: 5px;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  transition: 300ms;
+  width: 260px;
+  height: 0;
+  opacity:0;
+}
+.add-card-inp {
+  display: block;
+  border-radius: 3px;
+  width: 100%;
+  height: 32px;
+  margin-bottom: 4px;
+  background: #d6d8da;
+  border: none;
+  outline: none;
+  transition: 300ms;
+}
+#save-add-title{
+  opacity: 0;
+  color:rgb(21, 179, 214);
+  transition: 1000ms;
+}
+.add-card-inp::-webkit-input-placeholder{
+  color:#929393;
+}
+.text.active,.save.active{
+  display: block;
+}
+.add-card .el-icon-close,.add .el-icon-close{
+  margin-left: 8px;
+  padding: 6px;
+  border-radius: 4px
+}
+.add-card .el-icon-close:hover,.add .el-icon-close:hover{
+  background-color:  rgba(143, 143, 143, 0.7)
+}
+
+/*滚动条*/
+.scroll-foo{
+  width: 90%;
+  height: 12px;
+  border-radius: 10px; 
+  background: rgb(123, 145, 168);
+  margin: 0 auto;
+  margin-top: 8px;
+  position: relative;
+}
+
+.scroll-bar{
+  cursor: default;
+  position: absolute;
+  height: 100%;
+  background: rgb(123, 187, 219);
+  border-radius: 10px;
+  top:0;
+}
+/*添加看板文本框显示*/
+.textBox.active{
+  display: block;
+}
+.add{
+  margin-top: 10px;
+}
+.add .el-icon-more{
+  float: right;
+  margin: 5px 10px 0 0
+}
+.card-bottom{
+  text-decoration: underline;
+  height: 40px;
+  width: 100%;
+  padding: 10px 10px;
+  line-height: 20px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  cursor: pointer;
+}
+.card-bottom:hover{
+  background-color: rgba(143, 143, 143, 0.7)
+}
+
+
+
+
+
+
+
