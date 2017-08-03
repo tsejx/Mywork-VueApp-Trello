@@ -1,0 +1,71 @@
+{
+  "_from": "vue-datepicker",
+  "_id": "vue-datepicker@1.3.0",
+  "_inBundle": false,
+  "_integrity": "sha1-EvNfRNj5m3uTjFc13L6gJYsL+Aw=",
+  "_location": "/vue-datepicker",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "vue-datepicker",
+    "name": "vue-datepicker",
+    "escapedName": "vue-datepicker",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://registry.npm.taobao.org/vue-datepicker/download/vue-datepicker-1.3.0.tgz",
+  "_shasum": "12f35f44d8f99b7b938c5735dcbea0258b0bf80c",
+  "_spec": "vue-datepicker",
+  "_where": "F:\\hubuilder\\Trello",
+  "author": {
+    "name": "Awe"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ],
+      [
+        "vueify",
+        {}
+      ]
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/hilongjw/vue-datepicker/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "moment": "^2.11.1"
+  },
+  "deprecated": false,
+  "description": "calendar and datepicker component with material design for Vue.js ",
+  "homepage": "https://github.com/hilongjw/vue-datepicker#readme",
+  "keywords": [
+    "vue",
+    "datepicker",
+    "vue-datepicker"
+  ],
+  "license": "MIT",
+  "main": "vue-datepicker.vue",
+  "name": "vue-datepicker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hilongjw/vue-datepicker.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.3.0"
+}
