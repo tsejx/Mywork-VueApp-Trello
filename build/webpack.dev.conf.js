@@ -33,9 +33,9 @@ module.exports = merge(baseWebpackConfig, {
     new FriendlyErrorsPlugin(),
     new webpack.ProvidePlugin({
       $              : "jquery",
-      jQuery         : "jquery",
-      "window.jQuery": "jquery",
-      "root.jQuery"  : "jquery",
+      // jQuery         : "jquery",
+      // "window.jQuery": "jquery",
+      // "root.jQuery"  : "jquery",
       //sematic 用到jquery
       //semantic ui
       // semantic     : 'semantic-ui-css',
