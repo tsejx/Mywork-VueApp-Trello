@@ -42,7 +42,9 @@
 `npm install` 安装依赖
 
 安装过程可能需要安装SemanticUI 依次选择
+
 1.`Automatic(Use default locations and all components)`
+
 2.`No,let me specify` 然后一直回车即可
 
 `npm start` 快速开始 
