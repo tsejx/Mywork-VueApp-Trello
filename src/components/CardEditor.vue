@@ -78,7 +78,7 @@
           </div>
         </div>
         <ul id="card-editor-btns" class="ui animated list quick-card-editor-buttons">
-          <li id="clear-list-style" class="item" @click.stop>
+          <li class="item" @click.stop>
             <a 
               href="#" 
               class="ui mini button black quick-card-editor-buttons-item"
@@ -89,7 +89,7 @@
               修改标签
             </a>
           </li>
-          <li id="clear-list-style" class="item" @click.stop>
+          <li class="item" @click.stop>
             <a 
               href="#" 
               class="ui mini button black quick-card-editor-buttons-item"
@@ -100,7 +100,25 @@
               修改到期日
             </a>
           </li>
-          <li id="clear-list-style" class="item">
+          <li class="item" @click.stop>
+            
+            <el-upload
+              class="upload-demo"
+              action="/fileupdate"
+              :on-preview="handlePreview"
+              :on-success = "handleSucc"
+              :file-list="fileList">
+              <a 
+                href="#" 
+                class="ui mini button black quick-card-editor-buttons-item"
+              >
+                <i class="icon wait " >
+                </i>
+                上传头像
+              </a>
+            </el-upload>
+          </li>
+          <li class="item">
             <a 
               href="#" 
               class="ui mini button black quick-card-editor-buttons-item"
@@ -121,6 +139,10 @@
 import Vue from 'vue'
 import picker from '@/components/Date-picker'
 import LabelPicker from '@/components/Label-picker'
+import {upload} from 'element-ui'
+
+Vue.use(upload)
+
 let eventbus = new Vue({})
 export default {
   name: 'cardeditor',
@@ -159,7 +181,9 @@ export default {
         title: '',
         item: []
       },
-      index: 0
+      index: 0,
+      // 数据上传
+      fileList: []
     }
   },
   mounted () {
@@ -223,6 +247,19 @@ export default {
       this.eventbus.$emit('showLabel')
       // 传递的标签信息
       this.eventbus.$emit('sentlabel', this.oneListData.labels)
+    },
+    // 处理上传头像
+    handlePreview (file, fileList) {
+      console.log(file, fileList)
+    },
+    handleSucc (response, file, fileList) {
+      this.oneListData.attachments.pop()
+      this.oneListData.attachments.push({
+        id: Date.now(),
+        type: 'image',
+        src: `./static/img/${response}`
+      })
+      console.log(response)
     }
   }
 }
@@ -313,5 +350,8 @@ export default {
     outline: none;
     width: 100%;
     height: 34px;
+  }
+  #card-editor-btns .el-upload-list__item {
+    display: none;
   }
 </style>

@@ -2,26 +2,26 @@
   <div class="edit-background">
     <div class="ui  grid edit-con" @click.stop>
     <div class=" row close ">
-      <button 
+      <button
         class=" basic ui icon button close-btn"
         @click = "closeEdit"
       >
-        <i class="icon remove remove-edit"></i>  
+        <i class="icon remove remove-edit"></i>
       </button>
     </div>
     <div class="row pic">
       <div class="column">
-        <div 
+        <div
           class = "pic-show"
           :style = "imgSrc"
         >
         </div>
       </div>
     </div>
-    <div class="row text-container">
+    <div class="row text-container" id="edit-text-container">
       <div class="ui grid column write-text">
         <div class="ui grid" v-if = "!writeText">
-          <button 
+          <button
             class="ui button icon"
             @click = "changeText"
           >
@@ -32,12 +32,12 @@
           </span>
         </div>
         <div class="ui grid" v-if = "writeText">
-          <input 
-            type = "text" 
+          <input
+            type = "text"
             ref = "textInp"
             @blur = "cancelText"
           >
-          <button 
+          <button
             class="mini ui button green"
             @mousedown = "saveText"
           >
@@ -50,7 +50,7 @@
       <div class="row list">
         <div class="column">
           <h3>标签</h3>
-          <LabelPicker 
+          <LabelPicker
           @sendlabel = "setLabel"
           :eventbus = "eventBus"
           ></LabelPicker>
@@ -59,7 +59,7 @@
       <div class="row list">
         <div class="column">
           <h3>到期日</h3>
-          <picker 
+          <picker
             @senddate = "setDeadline"
             :eventbus = "eventBus"
           ></picker>
@@ -67,17 +67,17 @@
       </div>
       <div class="row list">
         <div class="column">
-          <h3>description</h3>
+          <h3>Description</h3>
           <div class="editDes" v-if = "writeDes">
-            <div 
+            <div
              id="leave-message-textarea"
-             contenteditable="true" 
+             contenteditable="true"
              data-text="输入描述"
              ref = "desInp"
-             @blur = "cancelDes"     
+             @blur = "cancelDes"
              ></div>
-            <button 
-            class="ui button green saveDes" 
+            <button
+            class="ui button green saveDes"
             @mousedown = "saveDes"
             >保存</button>
             <i class="icon close" style="font-size:18px" @click = "cancelDes"></i>
@@ -87,7 +87,7 @@
               <div class="header">描述</div>
               <div class="meta">
                 <!-- 第一次接受到userdata是一个{} -->
-                
+
                 {{typeof userdata.des === 'undefined' || Object.keys(userdata.des).length === 0 ?'可添加描述' :timePast(userdata.des.addtime)}}&nbsp&nbsp
                 <a @click = "changeDes">编辑</a>
                 <a @click = "delDes">删除</a>
@@ -144,7 +144,7 @@
           <h3>添加</h3>
         </div>
         <div class="column">
-          <button 
+          <button
             class="green fluid ui button"
             @click = "showDate"
           >
@@ -152,7 +152,7 @@
           到期日</button>
         </div>
         <div class="column">
-          <button 
+          <button
             class="fluid ui button"
             @click = "changeDes"
           >
@@ -160,7 +160,7 @@
           描述</button>
         </div>
         <div class="column">
-          <button 
+          <button
             class="fluid ui button"
             @click.stop = "showLabel"
           >
@@ -400,7 +400,7 @@ export default {
   .edit-con .pic{
     height: 160px;
     background-color: black;
-    text-align:center;  
+    text-align:center;
   }
   /*放背景图的div*/
   .edit-con .pic .pic-show{
@@ -431,10 +431,17 @@ export default {
     position: relative;
   }
   /*关闭 按钮*/
+  #app .close-btn {
+    box-shadow: none;
+    color: rgba(0,0,0,.1);
+  }
   .edit-con .close-btn{
     position: absolute;
-    right: -4px;
-    top: 0
+    right: 0;
+    top: 0;
+  }
+  #edit-text-container {
+    padding-left: 26px;
   }
   /*评论输入框*/
   .edit-con #comment-input{
@@ -446,12 +453,12 @@ export default {
   }
   /*描述编辑输入框*/
   #leave-message-textarea{
-    width: 100%; 
+    width: 100%;
     min-height:100px;
     max-height:140px;
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 5px; 
+    border-radius: 5px;
     outline: 0;
     border: 1px solid #c3c5c6;
     font-size: 14px;

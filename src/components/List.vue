@@ -56,8 +56,8 @@
           >
           </textarea>
           <div>
-            <button 
-              class="ui teal button btn-add" 
+            <button
+              class="ui teal button btn-add"
               @mousedown="clickAddCardItem"
             >添加</button>
             <a 

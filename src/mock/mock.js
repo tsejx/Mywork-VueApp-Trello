@@ -1,10 +1,10 @@
 
 let data = [
   {
-    title: '列表头1',
+    title: 'List1',
     item: [
       {
-        text: 'this is the first title',
+        text: 'This is the first title',
         id: 1,
         labels: [
           {id: 1, text: '今天完成', color: 'blue', picked: true, editting: false},
@@ -14,7 +14,7 @@ let data = [
           {id: 5, text: '其他', color: 'pink', picked: false, editting: false}
         ],
         des: {
-          text: '你很可爱你知道吗？？？？？',
+          text: 'This is List1 description.',
           addtime: new Date('2017 6 4 14:38')
         },
         attachments: [
@@ -29,27 +29,27 @@ let data = [
         comments: [
           {
             id: 1,
-            userName: 'Liufuwei',
-            text: '你是不是傻',
+            userName: 'Elliot',
+            text: 'How artistic!',
             addtime: new Date('2017 7 4 12:20')
           },
           {
             id: 2,
-            userName: 'Xiejunxing',
-            text: '可能是',
+            userName: 'Matt ',
+            text: 'This has been very useful for my research. Thanks as well!',
             addtime: new Date('2017 7 4 14:20')
           },
           {
             id: 3,
-            userName: 'Fq',
-            text: '憋说了,我傻还不行吗',
+            userName: 'Joe Henderson ',
+            text: 'Dude, this is awesome. Thanks so much',
             addtime: new Date('2017 7 4 14:21')
           }
         ],
         deadline: new Date('2017 9 10 14:20')
       },
       {
-        text: '标题3',
+        text: 'Title3',
         id: 3,
         labels: [
           {id: 1, text: '今天完成', color: 'blue', picked: false, editting: false},
@@ -68,10 +68,10 @@ let data = [
     ]
   },
   {
-    title: '列表头2',
+    title: 'List2',
     item: [
       {
-        text: 'this is the second title',
+        text: 'This is the second title',
         id: 1,
         labels: [
           {id: 1, text: '今天完成', color: 'blue', picked: true, editting: false},
@@ -81,7 +81,7 @@ let data = [
           {id: 5, text: '其他', color: 'pink', picked: false, editting: false}
         ],
         des: {
-          text: '不会做啊',
+          text: 'This is List2 description.',
           addtime: new Date('2017 6 4 14:38')
         },
         attachments: [
@@ -96,21 +96,21 @@ let data = [
         comments: [
           {
             id: 1,
-            userName: 'Liufuwei111',
-            text: '你是不是傻',
+            userName: 'Stevie Feliciano',
+            text: 'Hey guys, I hope this example comment is helping you read this documentation.',
             addtime: new Date('2017 7 4 12:20')
           },
           {
             id: 2,
-            userName: 'Xiejunxing',
-            text: '可能是2222',
+            userName: 'Tom Lukic',
+            text: 'This will be great for business reports. I will definitely download this.',
             addtime: new Date('2017 7 4 14:20')
           }
         ],
         deadline: new Date('2016 1 10 14:20')
       },
       {
-        text: '标题3',
+        text: 'Title3',
         id: 3,
         labels: [
           {id: 1, text: '今天完成', color: 'blue', picked: false, editting: false},
@@ -129,7 +129,7 @@ let data = [
     ]
   },
   {
-    title: '列表头3',
+    title: 'List3',
     item: [
       {
         text: 'this is the third title',
@@ -142,7 +142,7 @@ let data = [
           {id: 5, text: '其他', color: 'pink', picked: false, editting: false}
         ],
         des: {
-          text: 'Mc俊星',
+          text: 'Jehoshaphat',
           addtime: new Date('2017 4 4 14:38')
         },
         attachments: [
@@ -157,21 +157,21 @@ let data = [
         comments: [
           {
             id: 1,
-            userName: 'Liufuwei111',
-            text: '你是不是傻',
+            userName: 'Steve Jobes ',
+            text: 'I\'m very interested in this motherboard. Do you know if it\'d work in a Intel LGA775 CPU socket?',
             addtime: new Date('2017 7 4 12:20')
           },
           {
             id: 2,
-            userName: 'Xiejunxing',
-            text: '可能是2222',
+            userName: 'Jehoshaphat Tse',
+            text: 'I re-tweeted this.',
             addtime: new Date('2017 7 4 14:20')
           }
         ],
         deadline: new Date('2017 7 10 14:20')
       },
       {
-        text: '标题3',
+        text: 'Title3',
         id: 3,
         labels: [
           {id: 1, text: '今天完成', color: 'blue', picked: false, editting: false},

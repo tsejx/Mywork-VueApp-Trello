@@ -1,8 +1,8 @@
 <template lang="html">
   <div class="body">
-    <!-- 编辑面板 -->
+    <!-- 公用弹出层 -->
     <keep-alive>
-      <Edit 
+      <Edit
         @closeedit = "hideEdit"
         v-if = "editing"
         :databus = "dataBus"
@@ -12,15 +12,16 @@
         :databus = "dataBus"
       >
       </minEdit>
-      <PopOver 
+      <PopOver
         v-if = "isShowHeadOpt"
+        @clearlist = "clearList"
         :databus = "dataBus"
       ></PopOver>
     </keep-alive>
     <div class="top">
-      <el-button type="primary" icon="menu" class="kanban">看板</el-button>
+      <el-button type="primary" icon="menu">看板</el-button>
       <el-input
-        class="search-text"
+        id="search-text"
         placeholder="请输入搜索信息"
         icon="search"
       >
@@ -58,16 +59,16 @@
         <a>显示菜单</a>
       </span>
     </div>
-    <div 
+    <div
       class="scroll-wrap"
       ref = "scrollWrap"
       @mousedown = "moveContent"
       @mousemove.prevent
     >
-      <div class="todo-content" ref = "todoContent">
-      <!-- 列表 -->
-        <List 
-        v-for = "listdata,key in data" 
+      <div class="todo-content" ref = "todoContent" id = "todo-content">
+      <!-- 主要内容模块 -->
+        <List
+        v-for = "listdata,key in data"
         :listdata = "listdata"
         key = "key"
         :index = "key"
@@ -78,26 +79,26 @@
         @mousedown.stop
         :databus = "dataBus"
         ></List>
-        <div 
-          @click.stop class = "add-card-wrap" 
+        <div
+          @click.stop class = "add-card-wrap"
           :class = "{'show-add-card': isAddList}"
         >
-          <input 
-            type="text" 
+          <input
+            type="text"
             class="add-card"
             placeholder="添加一个列表..."
             @mouseup = "showAddList"
             @mousedown.prevent
           >
           <div class="add-card-edit">
-            <input 
-              type="text" 
+            <input
+              type="text"
               class="add-card-inp"
               placeholder="添加一个列表..."
               ref = "addCardInp"
               @blur = "isAddList = false"
             >
-            <button 
+            <button
               class="mini ui button green"
               id="save-add-title"
               @mousedown = "saveAddList"
@@ -107,8 +108,8 @@
       </div>
     </div>
     <div class="scroll-foo" ref = "scrollFoo" v-show="showScroll">
-      <div 
-        class="scroll-bar" 
+      <div
+        class="scroll-bar"
         ref = "scrollBar"
         @mousedown = "barMove"
       >
@@ -182,23 +183,35 @@ export default {
       this.isAddList = false
       this.$refs.addCardInp.value = ''
       // 滚动条 和 todoContent的位置
+      this.moveScrollBar()
+    },
+    // 滚动条移动
+    moveScrollBar() {
       Vue.nextTick(function () {
         let bar = this.$refs.scrollBar
         let foo = this.$refs.scrollFoo
         const scrollWrap = this.$refs.scrollWrap
         const todoContent = this.$refs.todoContent
-        if (todoContent.clientWidth <= scrollWrap.clientWidth) return
-        if (todoContent.clientWidth - scrollWrap.clientWidth < 275) return
+        if (todoContent.clientWidth <= scrollWrap.clientWidth) {
+          // console.log('清除')
+          this.showScroll = false
+          return
+        }
         // 显示滚动条
         this.showScroll = true
         Vue.nextTick(function () {
           // 计算滚动条宽度
           bar.style.width = (scrollWrap.clientWidth / todoContent.clientWidth) * foo.clientWidth + 'px'
-          todoContent.style.left = todoContent.offsetLeft - 275 + 'px'
+          console.log(bar.style.width)
+          todoContent.style.left = -(todoContent.clientWidth - scrollWrap.clientWidth) + 'px'
           // 滚动条偏移
           bar.style.left = foo.clientWidth - bar.clientWidth + 'px'
         })
       }.bind(this))
+    },
+    // 清除列表时调整滚动条
+    clearList () {
+      this.moveScrollBar()
     },
     // 左右滚动内容区
     moveContent (e) {

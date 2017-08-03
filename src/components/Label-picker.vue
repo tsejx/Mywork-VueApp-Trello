@@ -15,9 +15,9 @@
       </div>
       <ul class="label-main" @click.stop>
         <li v-for = "val,key in labelData" :class = "{editting: val.editting}">
-          <a 
-          class="ui fluid label big" 
-          :class = "val.color" 
+          <a
+          class="ui fluid label big"
+          :class = "val.color"
           @click = "selectOne(val)"
           >{{val.text}}
             <span class="label-checked" v-if = "val.picked">
@@ -26,11 +26,11 @@
           </a>
           <input type="text" name="" value="" ref = "editInput" @blur = "val.editting = false"
            >
-          <button 
+          <button
           class="mini ui button green label-save"
           @mousedown = "saveText(val, key)"
           >保存</button>
-          <button 
+          <button
           class = "label-edit"
           @click = "editText(val , key)"
           >
@@ -152,10 +152,10 @@ export default {
     border-radius: 5px;
     right: 0;
     top: 0;
-    background: white;
+    cursor: pointer;
   }
   .close-label:hover{
-    background:rgb(188, 204, 252) ;
+    color: rgba(0,0,0,1.0);
   }
   .label-main{
     padding:0px 10px;
@@ -174,7 +174,7 @@ export default {
   /*编辑状态下*/
   .label-main li.editting a {
     display: none;
-  } 
+  }
   .label-main li.editting input{
     display: block;
   }

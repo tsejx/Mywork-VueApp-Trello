@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import myDatepicker from 'vue-datepicker'
+import myDatepicker from './vue-datepicker/vue-datepicker.vue'
 export default {
   props: {
     eventbus: Object

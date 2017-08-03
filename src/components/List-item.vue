@@ -23,13 +23,14 @@
         <!-- 列表项 -->
         <li
           class="card-item"
+          :class = "{'completed':itemChecked}"
           @mouseenter="showRenameBtn"
           @mouseleave="hiddenRenameBtn"
           @click.prevent = "showOwnEdit(item)"
           @mousedown.prevent
           v-if = "isShowDefalut"
           ref = "listItem"
-        >
+        >  
           <div class="card-default-con">
             <div
               class="card-cover"
@@ -103,6 +104,7 @@ export default {
       isShowDrop: false,
       isShowDefalut: true,
       isShowLabel: false,
+      itemChecked: false,
       dropBox: {
         'width': '100%',
         'height': '200px',
@@ -188,6 +190,10 @@ export default {
     },
     hiddenRenameBtn (e) {
       e.target.classList.remove('active-card')
+    },
+    // 已完成
+    checkToggle () {
+      this.itemChecked = true
     },
     // 打开简易的编辑面板
     quickEdit (oneListData) {

@@ -34,7 +34,7 @@
 </template>
 
 <script type="text/javascript">
-
+import Vue from 'vue'
   export default {
     name: 'pop-over',
     props: {
@@ -53,7 +53,12 @@
         this.listdata.item = []
       },
       recoverList () {
+        // 清除数据
         this.maindata.splice(this.index, 1)
+        Vue.nextTick(() => {
+          // 调整滚动条
+          this.$emit('clearlist')
+        })
       }
     },
     created () {
