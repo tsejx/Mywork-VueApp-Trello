@@ -1,26 +1,28 @@
 ﻿# 基于Vue实现的简易看板系统项目
 
+预览地址：[http://kanban.microbu.com/][1]
+
 ## 实现效果
 
 **主页**
 
-![主页][1]
+![主页][2]
 
 **卡片快速编辑和头像上传**
 
-![卡片快速编辑和头像上传][2]
+![卡片快速编辑和头像上传][3]
 
 **卡片详情**
 
-![卡片详情][3]
+![卡片详情][4]
 
 **选择到期日**
 
-![选择到期日][4]
+![选择到期日][5]
 
 **卡片拖拽**
 
-![此处输入图片的描述][5]
+![此处输入图片的描述][6]
 
 
 ## 技术栈
@@ -95,8 +97,9 @@
  - 三者需要按相同比例关联起来
 
 
-  [1]: http://storage1.imgchr.com/AYrY8.png
-  [2]: http://storage1.imgchr.com/AYDFf.png
-  [3]: http://storage1.imgchr.com/AYwwt.png
-  [4]: http://storage1.imgchr.com/AY0TP.png
-  [5]: http://storage1.imgchr.com/AYdeI.png
+  [1]: http://kanban.microbu.com/
+  [2]: http://storage1.imgchr.com/AYrY8.png
+  [3]: http://storage1.imgchr.com/AYDFf.png
+  [4]: http://storage1.imgchr.com/AYwwt.png
+  [5]: http://storage1.imgchr.com/AY0TP.png
+  [6]: http://storage1.imgchr.com/AYdeI.png
